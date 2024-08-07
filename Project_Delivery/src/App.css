@@ -1,0 +1,16 @@
+body {
+  font-family: "Sofia Sans", sans-serif;
+  background: linear-gradient(180deg, rgba(68, 18, 232, 0.215) 0%, rgba(176, 1, 19, 0) 100%);
+  background-size: cover;
+}
+
+.logo {
+  background: #e70ac2;
+  max-width: 200px;
+  max-height: 200px;
+  width: 100%; /*100% del anchp de la img*/
+  height: 100%; /* 100% del alto e la img*/
+  object-fit: contain; /*fijamos el logo*/
+  border-radius: 10px; /* Bordes redondeados para una mejor estética */
+  box-shadow: 0 4px 8px rgba(232, 6, 55, 0.986); /* Asegura que el logo se ajuste sin recortarse */
+}
