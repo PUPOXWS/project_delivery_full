@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema(
       minlength: 8,
       select: false,
     },
-    confirmPassword: {
+    confirmpassword: {
       type: String,
       required: true,
       minlength: 8,
