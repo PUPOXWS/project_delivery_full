@@ -1,11 +1,12 @@
 const bcrypt = require("bcrypt");
-const jwt = require("jwt");
+const jwt = require("jsonwebtoken");
 const Usuario = require("../model/Usuario");
 const generarOtp = require("otp-generator");
 const nodemailer = require("nodemailer");
 
 const ControladorRegistros = async (req, res) => {
   try {
+    console.log(req.body);
     const { name, email, password, confirmpassword, imageProfile } = req.body;
 
     if (!imageProfile) {

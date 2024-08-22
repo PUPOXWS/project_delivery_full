@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const imageRouter = require("./routes/imagen");
 const cors = require("cors");
 const app = express();
+const userRoutes =require("./routes/usuario");
 
 dotenv.config();
 const port = process.env.PORT || 8000;
@@ -28,7 +29,8 @@ mongoose.connection.on("disconnected", () => {
 mongoose.connection.on("connected", () => {
   console.log("connected");
 });
-app.use("/api/v1/all",imageRouter); //midleware montar imagenes nube
+app.use("/api/v1/all",imageRouter);//midleware montar imagenes nube
+app.use("/api/v1/usuario",userRoutes);
 app.use(express.json({ limit: "3mb" }));
 
 app.listen(port, () => {
