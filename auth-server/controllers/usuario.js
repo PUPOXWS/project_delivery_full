@@ -6,9 +6,12 @@ const nodemailer = require("nodemailer");
 
 const ControladorRegistros = async (req, res) => {
   try {
-    console.log(req.body);
-    const { name, email, password, confirmpassword, imageProfile } = req.body;
+    console.log("req.body:", req.body);
 
+    // Extrae los valores necesarios del cuerpo de la solicitud
+    const { email, password, confirmpassword, name, imageProfile } = req.body;
+
+    // Verificación si el `imageProfile` está presente
     if (!imageProfile) {
       return res.status(400).send({
         message: "Invalid image profile",
@@ -48,7 +51,7 @@ const ControladorRegistros = async (req, res) => {
         email,
         password: req.body.password,
         confirmpassword: req.body.confirmpassword,
-        imageProfile,
+        imageProfile: req.body.imageProfile,
         otp,
       });
       await newUser.save();
@@ -68,7 +71,7 @@ const ControladorRegistros = async (req, res) => {
         service: "gmail",
         auth: {
           user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASSWORD,
+          pass: process.env.EMAIL_PASS,
         },
       });
 

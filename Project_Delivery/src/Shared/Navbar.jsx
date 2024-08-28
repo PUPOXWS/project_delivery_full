@@ -30,12 +30,14 @@ const Navbar = () => {
             <a href="" className="text-[#191919] text-xl font-medium hover:text-green-500">
               Comida Popular
             </a>
+            <Link to="/login">
             <button
               className="bg-[#22E125] active:scale-90 transition duration-100 transform
               hover:shadow-xl shadow-md rounded-full px-8 py-2 text-xl font-medium text-white"
             >
               Login
             </button>
+            </Link>
           </div>
 
           <div className="block lg:hidden z-40" onClick={handleNav}>

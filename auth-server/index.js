@@ -8,6 +8,8 @@ const userRoutes =require("./routes/usuario");
 
 dotenv.config();
 const port = process.env.PORT || 8000;
+
+app.use(express.json({ limit: "3mb" }));
 app.use(cors());
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -31,7 +33,7 @@ mongoose.connection.on("connected", () => {
 });
 app.use("/api/v1/all",imageRouter);//midleware montar imagenes nube
 app.use("/api/v1/usuario",userRoutes);
-app.use(express.json({ limit: "3mb" }));
+// app.use(express.json({ limit: "3mb" }));
 
 app.listen(port, () => {
   connect();

@@ -1,8 +1,8 @@
 const cloudinary = require("cloudinary");
 cloudinary.config({
-  cloud_name: "dsiuq4uzu",
-  api_key: "124483893473285",
-  api_secret: "cP4QzfwZ8vpMeOpiPSHoHOsnkCg",
+  cloud_name: "dyrfa9l8s",
+  api_key: "388175982835765",
+  api_secret: "57WeHilINybdbufoGn2yDajT6fk",
 });
 
 const controladorSubirImagen = async (req, res) => {
